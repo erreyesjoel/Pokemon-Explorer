@@ -1,0 +1,11 @@
+services:
+  poke-app:
+    build: .
+    container_name: angular_poke_app
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
