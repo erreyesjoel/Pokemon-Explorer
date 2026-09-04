@@ -8,6 +8,9 @@ WORKDIR /app
 # Copiamos primero los archivos de dependencias para aprovechar la caché de Docker
 COPY package*.json ./
 
+# Actualiza npm (evita el bug "edgesOut")
+RUN npm install -g npm@11
+
 # Instalamos las dependencias del proyecto
 RUN npm install
 
