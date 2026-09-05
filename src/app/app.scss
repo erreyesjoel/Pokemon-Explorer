@@ -1,0 +1,71 @@
+:host {
+	--ink: #18232b;
+	--muted: #71818a;
+	--line: #dce5e7;
+	--coral: #f27662;
+	--mint: #c8e8d9;
+	display: block;
+	color: var(--ink);
+}
+
+.page-shell { max-width: 1180px; min-height: 100vh; margin: 0 auto; padding: 28px 42px 72px; }
+.topbar, .brand, .status, .section-heading, .type-list { display: flex; align-items: center; }
+.topbar { justify-content: space-between; }
+.brand { gap: 10px; color: var(--ink); font-size: 1.1rem; font-weight: 800; letter-spacing: 0.02em; text-decoration: none; }
+.brand-mark { display: grid; width: 30px; height: 30px; place-items: center; border: 2px solid var(--coral); border-radius: 50%; color: var(--coral); font-size: 1.25rem; line-height: 1; transform: rotate(-30deg); }
+.brand-dot { color: var(--coral); }
+.status { gap: 8px; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #54bd8b; box-shadow: 0 0 0 4px #e5f5ed; }
+.hero { display: grid; min-height: 490px; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; padding: 50px 0 64px; }
+.eyebrow { margin: 0 0 18px; color: var(--coral); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 22px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.4rem, 7vw, 6.4rem); font-weight: 400; letter-spacing: -0.06em; line-height: 0.93; }
+h1 em { color: var(--coral); font-style: italic; }
+.hero-text { max-width: 390px; margin-bottom: 30px; color: var(--muted); font-size: 1.02rem; line-height: 1.7; }
+.primary-action { display: inline-flex; align-items: center; gap: 22px; padding: 14px 19px 14px 21px; border-radius: 4px; background: var(--ink); color: white; font-size: 0.85rem; font-weight: 800; text-decoration: none; transition: transform 180ms ease, background 180ms ease; }
+.primary-action:hover { background: var(--coral); transform: translateY(-2px); }
+.primary-action span { font-size: 1.2rem; }
+.hero-art { position: relative; display: grid; min-height: 420px; place-items: center; overflow: hidden; border-radius: 48% 48% 22% 22%; background: var(--mint); }
+.sun { position: absolute; top: 42px; left: 50%; width: 190px; height: 190px; border-radius: 50%; background: #f8d36b; opacity: 0.75; transform: translateX(-50%); }
+.hero-ring { position: absolute; width: 76%; aspect-ratio: 1; border: 1px solid rgba(24, 35, 43, 0.14); border-radius: 50%; }
+.hero-art img { position: relative; z-index: 1; width: min(78%, 370px); filter: drop-shadow(0 25px 15px rgba(45, 82, 66, 0.2)); animation: float 4s ease-in-out infinite; }
+.hero-number { position: absolute; right: 30px; bottom: 22px; color: rgba(24, 35, 43, 0.42); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; }
+@keyframes float { 50% { transform: translateY(-10px) rotate(2deg); } }
+.discovery { border-top: 1px solid var(--line); padding-top: 32px; }
+.section-heading { justify-content: space-between; margin-bottom: 22px; }
+.section-heading .eyebrow { margin-bottom: 7px; }
+h2 { margin-bottom: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; font-weight: 400; letter-spacing: -0.04em; }
+.api-label { color: var(--muted); font-size: 0.75rem; font-weight: 700; }
+.api-label span { color: var(--coral); font-size: 1rem; }
+.pokemon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.pokemon-card { position: relative; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease; }
+.pokemon-card:hover { border-color: var(--coral); box-shadow: 0 12px 25px rgba(24, 35, 43, 0.08); transform: translateY(-5px); }
+.pokemon-card > img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; padding: 12px; background: #f3f7f5; }
+.pokemon-id { position: absolute; top: 10px; left: 11px; color: #91a0a5; font-size: 0.65rem; font-weight: 800; }
+.card-info { padding: 13px 12px 15px; }
+h3 { margin-bottom: 8px; font-size: 1rem; font-weight: 800; text-transform: capitalize; }
+.type-list { gap: 5px; flex-wrap: wrap; }
+.type-pill { padding: 4px 7px; border-radius: 3px; background: #eef2f1; color: #61706f; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; }
+.type-fire { background: #fde0d8; color: #c85d48; }
+.type-water { background: #dceafa; color: #4c7caf; }
+.type-grass { background: #dcefd8; color: #56845d; }
+.type-bug { background: #e9efd0; color: #788542; }
+.type-normal { background: #e9e6dd; color: #817c6d; }
+.type-poison { background: #eadcf1; color: #87599b; }
+.loading-message { padding: 48px; border: 1px dashed var(--line); color: var(--muted); text-align: center; }
+.error-message button { margin-left: 8px; border: 0; border-bottom: 1px solid var(--coral); background: transparent; color: var(--coral); cursor: pointer; font: inherit; font-weight: 700; }
+@media (max-width: 850px) {
+	.page-shell { padding-inline: 24px; }
+	.hero { min-height: auto; grid-template-columns: 1fr 0.8fr; padding-block: 55px; }
+	.hero-art { min-height: 320px; }
+	.pokemon-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+	.page-shell { padding: 20px 18px 50px; }
+	.hero { display: block; padding-block: 52px 44px; }
+	h1 { font-size: 4rem; }
+	.hero-art { min-height: 275px; margin-top: 38px; }
+	.section-heading { align-items: flex-end; }
+	.api-label { display: none; }
+	.pokemon-grid { grid-template-columns: repeat(2, 1fr); }
+}
