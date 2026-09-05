@@ -1,1 +1,3 @@
-export const API_URL = import.meta.env.VITE_API_URL;
+import { environment } from '../../environments/environment';
+
+export const API_URL = environment.apiUrl;
